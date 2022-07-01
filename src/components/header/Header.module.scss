@@ -1,0 +1,33 @@
+$background: #1abc9c;
+$p-10: 10px;
+
+.month {
+  padding: 25px 25px;
+  width: 100%;
+  background: $background;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month button,
+li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: transparent;
+  border: transparent;
+  padding-top: $p-10;
+}
+
+.month .prev {
+  float: left;
+}
+
+.month .next {
+  float: right;
+}

@@ -1,12 +1,13 @@
-import './App.css';
-import { useState } from 'react';
-import Header from './components/Header';
-import Weeks from './components/Weeks';
-import Days from './components/Days';
-import AddEventForm from './components/AddEventForm';
-
+import "./App.scss";
+import { useState } from "react";
+import Header from "./components/header/Header";
+import Weeks from "./components/weeks/Weeks";
+import Days from "./components/days/Days";
+import AddEventForm from "./components/AddEventForm";
 
 function App() {
+  const moment = require("moment");
+  const currentMonth = moment().month();
 
   const [selectedDate, setSelectedDate] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -25,17 +26,16 @@ function App() {
 
   return (
     <div className="App">
-    
-      <Header/>
-      <Weeks/>
+      <Header />
+      <Weeks />
       <Days handleClick={openForm} />
 
       <AddEventForm
-          show={showModal}
-          date={selectedDate}
-          onSave={handleSave}
-          onCancel={() => setShowModal(false)}
-        />
+        show={showModal}
+        date={selectedDate}
+        onSave={handleSave}
+        onCancel={() => setShowModal(false)}
+      />
     </div>
   );
 }
